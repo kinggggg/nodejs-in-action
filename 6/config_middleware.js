@@ -1,5 +1,5 @@
 var connect = require('connect');
-var logger1 = require('./logger');
+var logger2 = require('./logger');
 
 
 function hello(req, res) {
@@ -9,6 +9,6 @@ function hello(req, res) {
 
 var app = connect()
 
-  .use(logger1(':httpVersion :url'))
+  .use(new logger2(':httpVersion :url'))
   .use(hello)
   .listen(3000);
